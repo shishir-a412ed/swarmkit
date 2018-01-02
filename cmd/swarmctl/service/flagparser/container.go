@@ -23,6 +23,14 @@ func parseContainer(flags *pflag.FlagSet, spec *api.ServiceSpec) error {
 		spec.Task.GetContainer().Hostname = hostname
 	}
 
+	if flags.Changed("runtime") {
+		runtime, err := flags.GetString("runtime")
+		if err != nil {
+			return err
+		}
+		spec.Task.GetContainer().Runtime = runtime
+	}
+
 	if flags.Changed("command") {
 		command, err := flags.GetStringSlice("command")
 		if err != nil {

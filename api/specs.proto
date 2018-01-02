@@ -195,6 +195,9 @@ message ContainerSpec {
 	// All containers for a given service will have the same hostname
 	string hostname = 14;
 
+	// Container runtime
+	string runtime = 26;
+
 	// Env specifies the environment variables for the container in NAME=VALUE
 	// format. These must be compliant with  [IEEE Std
 	// 1003.1-2001](http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap08.html).
